@@ -87,5 +87,9 @@ FROM marvels
 WHERE height_m > (SELECT AVG(height_m) FROM marvels);
 
 
-
+-- Skinny tall heroes: Who has height above the average and weight below the average?
+SELECT name
+FROM marvels
+WHERE height_m > (SELECT AVG(height_m) FROM marvels)
+AND weight_kg < (SELECT AVG(weight_kg) FROM marvels);
 
